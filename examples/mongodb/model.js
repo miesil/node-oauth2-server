@@ -105,7 +105,7 @@ model.saveAccessToken = function (token, clientId, expires, userId, callback) {
 /*
  * Required to support password grant type
  */
-model.getUser = function (username, password, callback) {
+model.getUser = function (username, password, req, callback) {
   console.log('in getUser (username: ' + username + ', password: ' + password + ')');
 
   OAuthUsersModel.findOne({ username: username, password: password }, function(err, user) {

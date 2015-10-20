@@ -116,7 +116,7 @@ model.saveRefreshToken = function (refreshToken, clientId, expires, userId, call
 /*
  * Required to support password grant type
  */
-model.getUser = function (username, password, callback) {
+model.getUser = function (username, password, req, callback) {
   pg.connect(connString, function (err, client, done) {
     if (err) return callback(err);
     client.query('SELECT id FROM users WHERE username = $1 AND password = $2', [username,

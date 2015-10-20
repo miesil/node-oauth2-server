@@ -77,7 +77,7 @@ model.saveRefreshToken = function (refreshToken, clientId, expires, user, callba
   }, callback);
 };
 
-model.getUser = function (username, password, callback) {
+model.getUser = function (username, password, req, callback) {
   db.hgetall(util.format(keys.user, username), function (err, user) {
     if (err) return callback(err);
 

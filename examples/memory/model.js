@@ -100,7 +100,7 @@ model.saveRefreshToken = function (refreshToken, clientId, expires, userId, call
 /*
  * Required to support password grant type
  */
-model.getUser = function (username, password, callback) {
+model.getUser = function (username, password, req, callback) {
   for(var i = 0, len = users.length; i < len; i++) {
     var elem = users[i];
     if(elem.username === username && elem.password === password) {

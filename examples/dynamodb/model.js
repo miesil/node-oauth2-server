@@ -142,7 +142,7 @@ model.saveAuthCode = function (authCode, clientId, expires, user, callback) {
 /*
  * Required to support password grant type
  */
-model.getUser = function (username, password, callback) {
+model.getUser = function (username, password, req, callback) {
   console.log('in getUser (username: ' + username + ', password: ' + password + ')');
 
   dal.doGet(OAuthUserTable, { id: { S: "email:" + username}}, true, function(err, data) {
