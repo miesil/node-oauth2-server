@@ -167,9 +167,11 @@ Note: see https://github.com/thomseddon/node-oauth2-server/tree/master/examples/
 
 ### Required for `password` grant type
 
-#### getUser (username, password, callback)
+#### getUser (username, password, req, callback)
 - *string* **username**
 - *string* **password**
+- *object* **req**
+ - request object
 - *function* **callback (error, user)**
  - *mixed* **error**
      - Truthy to indicate an error
